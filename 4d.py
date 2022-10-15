@@ -25,5 +25,3 @@ for i in c:
 
 print("\n", a)
 
-
-
