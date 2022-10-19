@@ -6,4 +6,4 @@ print("Znak podkreślenia zwraca w trybie interaktywnym wartość ostatniego obl
 
 _a = 20 + 10
 
-print(_a)
+print(_)
