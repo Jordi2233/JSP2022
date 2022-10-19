@@ -2,8 +2,8 @@ import numpy as np
 from termcolor import colored
 import os as s
 
-s.system("clear")
 
+s.system("clear")
 x = 4
 y = 5
 m = 0
@@ -19,9 +19,7 @@ for j in range(0, x):
     c.append(b[m:m+5])
     m += 5
 
-
 for i in c:
     print(i, end="\n")
 
 print("\n", a)
-
