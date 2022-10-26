@@ -21,9 +21,11 @@ while x != 0:
 # else:
 #     print("Odd")
 
-num_check = {
-    0: "Even",
-    1: "Odd"
-}
+# num_check = {
+#     0: "Even",
+#     1: "Odd"
+# }
 
-print(num_check[num % 2])
+# print(num_check[num % 2])
+
+print(["Even", "Odd"][num % 2])

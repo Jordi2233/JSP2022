@@ -14,7 +14,7 @@ for x in range(f_len, n):
 
 for x in range(len(fib_arr)):
     system("sleep 0.2")
-    print(str(x + 1) + ")", fib_arr[x])
+    print(str(x + 1) + ") ", fib_arr[x])
 
 
 
