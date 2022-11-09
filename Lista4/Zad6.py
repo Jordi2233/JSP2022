@@ -1,21 +1,11 @@
 import os, math
 os.system('clear')
 
-given_list = input("Enter RGB color like '255 255 255': ").split()
-given_list = [int(num) for num in given_list]
+mod = input("What do you want to do? (RGB2HSV or HSV2RGB: ")
+mod = mod.upper()
+
 
 def RGB2HSV(arr):
-
-# Check and add or remove items to always have 3 elements
-
-    if len(arr) == 1:
-        arr.extend((0, 0))
-    elif len(arr) == 2:
-        arr.append(0)
-    else:
-        del arr[3:]
-
-
 
     R = arr[0]/255.0
     G = arr[1]/255.0
@@ -41,6 +31,74 @@ def RGB2HSV(arr):
 
     V = Cmax * 100
 
+    H = round(H, 2)
+    S = round(S, 2)
+    V = round(V, 2)
+
     return (H, S, V)
 
-print(RGB2HSV(given_list))
+def HSV2RGB(arr):
+
+    H = arr[0]
+    S = arr[1]
+    V = arr[2]
+
+    if 0 <= H < 360 and 0 <= S <= 1 and 0 <= V <= 1:
+        C = S * V
+        X = C * (1 - ((H / 60) % 2 - 1))
+        m = V - C
+
+    if 0 <= H < 60:
+        R = C
+        G = X
+        B = 0
+    elif 60 <= H < 120:
+        R = X
+        G = C
+        B = 0
+    elif 120 <= H < 180:
+        R = 0
+        G = C
+        B = X
+    elif 180 <= H < 240:
+        R = 0
+        G = X
+        B = C
+    elif 240 <= H < 300:
+        R = X
+        G = 0
+        B = C
+    elif 300 <= H < 360:
+        R = C
+        G = 0
+        B = X
+
+    R = (R + m) * 255
+    G = (G + m) * 255
+    B = (B + m) * 255
+    if R > 255:
+        R = 0
+    if G > 255:
+        G = 0
+    if B > 255:
+        B = 0
+    return (R, G, B)
+
+
+given_list = input("Enter color like '255 255 255': ").split()
+given_list = [int(num) for num in given_list]
+
+if len(given_list) == 1:
+    given_list.extend((0, 0))
+elif len(given_list) == 2:
+    given_list.append(0)
+else:
+    del given_list[3:]
+
+if mod == "RGB2HSV":
+    res = RGB2HSV(given_list)
+elif mod == "HSV2RGB":
+    res = HSV2RGB(given_list)
+
+print(res)
+
