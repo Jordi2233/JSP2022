@@ -15,26 +15,50 @@ def from_str_to_num(str):
     "ten": 10,
     "eleven": 11,
     "twelve": 12,
-    "thirteen": 13
+    "thirteen": 13,
+    "eighteen": 18,
+    "twenty": 20,
+    "thirty": 30,
+    "fifty": 50
     }
 
 
-    if "teen" in str and str != [x: for x in]:
-        str = str[0:len(str) - 4]
-        res = numbers[str] + 10
-        # res = str
-    else:
-        res = numbers[str]
+    res = "Wrong number! Try Again!\n"
+
+    wrongs = ["oneteen", "twoteen", "threeteen", "onety", "twoty", "threety"]
+    try:
+        if str not in [wrong for wrong in wrongs]:
+            if str not in [number for number in numbers]:
+                if "teen" in str:
+                    str = str[0:len(str) - 4]
+                    res = numbers[str] + 10
+                elif "ty" in str:
+                    if " " in str:
+                        str = str.split()
+                        res = numbers[str[0]] + numbers[str[1]]
+                    else:
+                        str = str[0:len(str) - 2]
+                        res = numbers[str] * 10
+            else:
+                res = numbers[str]
+    except:
+        res
 
     return res
 
 
 def main():
     os.system('clear')
-    num_str = input("Enter the number from 1 to 59 in words: ")
-    print(from_str_to_num(num_str))
-    # from_str_to_num(num_str)
+    res = ""
+    while True:
+        num_str = input("Enter the number from 1 to 59 in words: ")
+        res = from_str_to_num(num_str)
+        print(res)
+        if type(res) == int:
+            break
 
 
 if __name__ == '__main__':
 	main()
+
+
