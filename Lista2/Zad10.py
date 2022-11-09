@@ -1,13 +1,11 @@
 from os import *
 system('clear')
 
-arr = []
+arr = [num for num in range(0, 100, 3)]
 
-for i in range(0, 100, 3):
-    arr.append(i)
 
-print("Array before del: ", "\n", arr, "\n")
+print(f"Array before del:\n{arr}\n")
 
-del arr[4:len(arr):3]
+del arr[4::3]
 
-print("Array after del: ", "\n", arr, "\n")
+print(f"Array after del:\n {arr} \n")
