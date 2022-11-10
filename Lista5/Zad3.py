@@ -1,7 +1,7 @@
 import os
 
 def main():
-   os.system('clear')
+    os.system('clear')
 
 if __name__ == '__main__':
-  main()
+    main()
