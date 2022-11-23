@@ -1,9 +1,9 @@
 import os
 os.system('clear')
 
-num = int(input("Enter number: "))
+num: int = int(input("Enter number: "))
 
-def factorial(n):
+def factorial(n: int) -> int:
     fact = 1
 
     for i in range(n):
