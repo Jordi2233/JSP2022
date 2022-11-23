@@ -1,7 +1,7 @@
 import os
 
-def from_str_to_num(str):
-    str = str.lower()
+def from_str_to_num(user_str: str):
+    user_str = user_str.lower()
     numbers = {
     "one": 1,
     "two": 2,
@@ -27,20 +27,20 @@ def from_str_to_num(str):
 
     wrongs = ["oneteen", "twoteen", "threeteen", "onety", "twoty", "threety"]
     try:
-        if str not in [wrong for wrong in wrongs]:
-            if str not in [number for number in numbers]:
-                if "teen" in str:
-                    str = str[0:len(str) - 4]
-                    res = numbers[str] + 10
-                elif "ty" in str:
-                    if " " in str:
-                        str = str.split()
-                        res = numbers[str[0]] + numbers[str[1]]
+        if user_str not in [wrong for wrong in wrongs]:
+            if user_str not in [number for number in numbers]:
+                if "teen" in user_str:
+                    user_str = user_str[0:len(user_str) - 4]
+                    res = numbers[user_str] + 10
+                elif "ty" in user_str:
+                    if " " in user_str:
+                        user_str = user_str.split()
+                        res = numbers[user_str[0]] + numbers[user_str[1]]
                     else:
-                        str = str[0:len(str) - 2]
-                        res = numbers[str] * 10
+                        user_str = user_str[0:len(user_str) - 2]
+                        res = numbers[user_str] * 10
             else:
-                res = numbers[str]
+                res = numbers[user_str]
     except:
         res
 
