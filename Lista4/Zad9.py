@@ -6,8 +6,8 @@ num: int = int(input("Enter number: "))
 def factorial(n: int) -> int:
     fact = 1
 
-    for i in range(n):
-        i += 1
+    for i in range(1, n + 1):
+        
         fact *= i
 
     return fact

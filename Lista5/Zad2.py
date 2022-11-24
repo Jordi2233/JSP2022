@@ -17,7 +17,11 @@ def from_num_to_word(user_number: int) -> str:
     }
 
 
-    res: str = numbers[user_number]
+
+    if user_number % 10 == 0:
+        res = "Podzielna przez 10"
+    else:
+        res: str = numbers[user_number]
 
     return res
 
