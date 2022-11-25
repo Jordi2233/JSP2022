@@ -65,9 +65,8 @@ def thousand_number(num: int, nums: dict) -> str:
 
 def from_num_to_word(user_number: int) -> str:
 
-    #sto, dwieście
-
-    numbers = {0: "zero", 1: "jeden", 2: "dwa", 3: "trzy", 4: "cztery", 5: "pięć", 6: "sześć", 7: "siedem", 8: "osiem", 9: "dziewięć", 10: "dziesięć", 11: "jedenaście", 12: "dwanaście", 13: "trzynaście", 14: "czternaście", 15: "piętnaście", 16: "szesnaście", 17: "siedemnaście", 18: "osiemnaście", 19: "dziewiętnaście", 20: "dwadzieścia", 30: "trzydzieści", 40: "czterdzieści", 100: "sto", 200: "dwieście", 1000: "tysiąc"}
+    numbers = {0: "zero", 1: "jeden", 2: "dwa", 3: "trzy", 4: "cztery", 5: "pięć", 6: "sześć", 7: "siedem", 8: "osiem", 9: "dziewięć", 10: "dziesięć", 11: "jedenaście", 12: "dwanaście", 13: "trzynaście", 14: "czternaście",
+               15: "piętnaście", 16: "szesnaście", 17: "siedemnaście", 18: "osiemnaście", 19: "dziewiętnaście", 20: "dwadzieścia", 30: "trzydzieści", 40: "czterdzieści", 100: "sto", 200: "dwieście", 1000: "tysiąc"}
 
     if user_number > 100 and user_number < 1000:
         res = hundredth_number(user_number, numbers)
@@ -97,8 +96,6 @@ def main():
     # num: int = int(input("Wprowadź liczbę z zakresu od 0 do 1999: "))
     # res = from_num_to_word(num)
     # print(f'{res}')
-
-
 
 
 if __name__ == '__main__':
