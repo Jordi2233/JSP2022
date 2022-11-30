@@ -1,11 +1,8 @@
 #!/usr/bin/env python3
 import os
 
-# Napisz funkcję, która bierze sekwencję
-
 
 def genetic_sequence(x: str) -> str:
-
     x = x.upper()
     res = ""
 
@@ -15,14 +12,12 @@ def genetic_sequence(x: str) -> str:
         "T": "A",
         "G": "C"
     }
-
     for letter in x:
         if letter in key:
             letter = key[letter]
             res += letter
         else:
             res = ""
-
     res = res[::-1]
     return res
 
