@@ -1,0 +1,66 @@
+nr PESEL: 20322798692
+data urodzenia: 27.12.2020;	p³eæ: mê¿czyzna
+
+nr PESEL: 20322712139
+data urodzenia: 27.12.2020;	p³eæ: mê¿czyzna
+
+nr PESEL: 20322779293
+data urodzenia: 27.12.2020;	p³eæ: mê¿czyzna
+
+nr PESEL: 20322767171
+data urodzenia: 27.12.2020;	p³eæ: mê¿czyzna
+
+nr PESEL: 20322771594
+data urodzenia: 27.12.2020;	p³eæ: mê¿czyzna
+
+nr PESEL: 20322733594
+data urodzenia: 27.12.2020;	p³eæ: mê¿czyzna
+
+nr PESEL: 20322785904
+data urodzenia: 27.12.2020;	p³eæ: kobieta
+
+nr PESEL: 20322709119
+data urodzenia: 27.12.2020;	p³eæ: mê¿czyzna
+
+nr PESEL: 20322788246
+data urodzenia: 27.12.2020;	p³eæ: kobieta
+
+nr PESEL: 20322786798
+data urodzenia: 27.12.2020;	p³eæ: mê¿czyzna
+
+nr PESEL: 20322759127
+data urodzenia: 27.12.2020;	p³eæ: kobieta
+
+nr PESEL: 21210621546
+data urodzenia: 06.1.2021;	p³eæ: kobieta
+
+nr PESEL: 21210686660
+data urodzenia: 06.1.2021;	p³eæ: kobieta
+
+nr PESEL: 21210648279
+data urodzenia: 06.1.2021;	p³eæ: mê¿czyzna
+
+nr PESEL: 21210631312
+data urodzenia: 06.1.2021;	p³eæ: mê¿czyzna
+
+nr PESEL: 21210679136
+data urodzenia: 06.1.2021;	p³eæ: mê¿czyzna
+
+nr PESEL: 21210673044
+data urodzenia: 06.1.2021;	p³eæ: kobieta
+
+nr PESEL: 21210602046
+data urodzenia: 06.1.2021;	p³eæ: kobieta
+
+nr PESEL: 21210645038
+data urodzenia: 06.1.2021;	p³eæ: mê¿czyzna
+
+nr PESEL: 21210646284
+data urodzenia: 06.1.2021;	p³eæ: kobieta
+
+nr PESEL: 21210698580
+data urodzenia: 06.1.2021;	p³eæ: kobieta
+
+nr PESEL: 21210646705
+data urodzenia: 06.1.2021;	p³eæ: kobieta
+
