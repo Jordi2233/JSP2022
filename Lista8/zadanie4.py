@@ -10,9 +10,11 @@ cyfraKontrolna = 0
 
 def czyPesel(pesel, cyfraKontrolna, miesiac, rok, dzien):
 
-    cyfraKontrolna2 = zadanie4data.kontrolna(pesel, cyfraKontrolna)   #wyznaczenie cyfry kontrolnej z pozostałych cyfr peselu
+    # wyznaczenie cyfry kontrolnej z pozostałych cyfr peselu
+    cyfraKontrolna2 = zadanie4data.kontrolna(pesel, cyfraKontrolna)
 
-    if cyfraKontrolna2 == int(pesel[10]):         #sprawdzenie czy cyfra zgadza się tej w peselu
+    # sprawdzenie czy cyfra zgadza się tej w peselu
+    if cyfraKontrolna2 == int(pesel[10]):
         miesiac = zadanie4data.miesiac(pesel, miesiac)
         dzien = zadanie4data.dzien(pesel, dzien, miesiac)
         rok = zadanie4data.rok(pesel, rok)
@@ -21,10 +23,13 @@ def czyPesel(pesel, cyfraKontrolna, miesiac, rok, dzien):
         else:
             plec = 'Mezczyzna'
         if dzien != "" and dzien != None:
-            tekst = "Pesel: "+pesel+" data urodzenia "+dzien+"-"+miesiac+"-"+rok+" płeć "+plec+"\n"
+            tekst = "Pesel: "+pesel+" data urodzenia " + \
+                dzien+"-"+miesiac+"-"+rok+" płeć "+plec+"\n"
             prawidlowy.write(tekst)
             print("Pesel: ", pesel, end=" ")
-            print("data urodzenia ", dzien, "-", miesiac, "-", rok, " płeć ", plec, sep="")
+            print("data urodzenia ", dzien, "-", miesiac,
+                  "-", rok, " płeć ", plec, sep="")
+
 
 prawidlowy = open("prawidlowyPESEL.txt", 'w')
 with open('PESEL.txt', 'r') as f:

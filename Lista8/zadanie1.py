@@ -13,15 +13,19 @@ while (key > 10) or (key < 1):
     key = int(input("Podaj przesunięcie szyfru (od 1 do 10) "))
 
 strKey = str(key)
-name = input("Podaj nazwe pliku do zaszyfrowania (np. 'plik_do_szyfrowania') ");
-name = name + ".txt"
-path = input("Podaj ścieżkę zapisu pliku (np. 'zaszyfrowane') ");
+name = input("Podaj nazwe pliku do zaszyfrowania (np. 'plik_do_szyfrowania') ")
+# name = name + ".txt"
+name = f"{name}.txt"
+path = input("Podaj ścieżkę zapisu pliku (np. 'zaszyfrowane') ")
 
-namefile = "plik_zaszyfrowany" + strKey + '_' + str(today.year) + str(today.month) + str(today.day) + ".txt"
+# namefile = "plik_zaszyfrowany" + strKey + '_' + \
+#     str(today.year) + str(today.month) + str(today.day) + ".txt"
+namefile = f"plik_zaszyfrowany{strKey}_{today.year}{today.month}{today.day}.txt"
 try:
-    new = open(os.path.join(path,namefile),"w+") #write/read + create file if not exist
+    # write/read + create file if not exist
+    new = open(os.path.join(path, namefile), "w+")
     try:
-        with open(name, 'r') as f: #'r' - read
+        with open(name, 'r') as f:  # 'r' - read
             print('plik istnieje!')
             print('szyfrowanie...')
             zaszyfrowany = cezar.szyfrowanie(f.read(), key)

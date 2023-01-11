@@ -15,12 +15,14 @@ try:
             if file.endswith(".txt"):
                 name = directory+file
                 key = int(file[17])
-                new = 'plik_deszyfrowany' + str(key) + '_' + str(today.year) + str(today.month) + str(today.day) + ".txt"
+                new = f"plik_deszyfrowany{key}_{today.year}{today.month}{today.day}.txt"
                 try:
                     with open(name, 'r') as szyfr:
                         deszyfr = szyfr.read()
                         deszyfr = cezar.deszyfrowanie(deszyfr, key)
-                        odszyfrowane = open(os.path.join('odszyfrowane/', new), "w+")  # write + create if not exist
+                        # write + create if not exist
+                        odszyfrowane = open(os.path.join(
+                            'odszyfrowane/', new), "w+")
                         odszyfrowane.write(deszyfr)
                         print("plik ", file, " został odszyfrowany!")
                     odszyfrowane.close()
