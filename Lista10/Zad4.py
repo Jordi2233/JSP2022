@@ -21,28 +21,57 @@ class Currency:
 
     def get_currency(self, code: str):
         code_parent = self.file.find('kod_waluty', text=code).parent
-        exchange_rate = float(code_parent.find('kurs_sredni').text.replace(',', '.'))
+        exchange_rate = float(code_parent.find(
+            'kurs_sredni').text.replace(',', '.'))
         return exchange_rate
 
-    def calculate_pln(self, code: str, amount: float):
+    def calculate_pln_currency(self, code: str, amount: float):
         exchange_rate = Currency.get_currency(self, code)
-        return f'{amount} {code} = {amount * exchange_rate} PLN'
+        pln_to_currency = f'{amount} PLN -> {round((amount / exchange_rate), 2)} {code}'
+        currency_to_pln = f'{amount} {code} = {amount * exchange_rate} PLN'
+        return pln_to_currency, currency_to_pln
 
-    def calculate_curr_curr(self, code_1: str, code_2: str, amount: float):
+    def f_curr_to_sec_curr(self, code_1: str, code_2: str, amount: float):
         currency_1 = Currency.get_currency(self, code_1)
         currency_2 = Currency.get_currency(self, code_2)
-        return f'{amount} {code_1} = {round((amount * currency_1 / currency_2), 3)} {code_2}'
-
-
+        return f'{amount} {code_1} <-> {round((amount * currency_1 / currency_2), 2)} {code_2}'
 
 
 def main():
     os.system('clear')
     path = dotenv_values()['PATH']
     currency = Currency(path)
-    print(currency.calculate_pln('THB', 100))
-    print(currency.calculate_curr_curr('USD', 'THB', 100))
+    print(currency.f_curr_to_sec_curr('USD', 'THB', 100))
+    print("What do you want to do?")
+    print("1) PLN -> Currency")
+    print("2) Currency -> PLN")
+    print("3) Currency1 -> Currency2")
+    print("4) Exit")
+    mod = input("Your choice: ")
 
+    try:
+        match mod:
+
+            case '1':
+                code = input("Currency code: ")
+                value = float(input("Value: "))
+                print(currency.calculate_pln_currency(code, value)[0])
+
+            case '2':
+                value = float(input("Value: "))
+                code = input("Currency code: ")
+                print(currency.calculate_pln_currency(code, value)[1])
+
+            case '3':
+                code_1 = input("First currency code: ")
+                code_2 = input("Second currency code: ")
+                value = float(input("Value: "))
+                print(currency.f_curr_to_sec_curr(code_1, code_2, value))
+
+            case '4':
+                exit()
+    except AttributeError:
+        print("Wrong currency code!")
 
 if __name__ == '__main__':
     main()
