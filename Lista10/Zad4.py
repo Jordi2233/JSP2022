@@ -27,7 +27,7 @@ class Currency:
 
     def calculate_pln_currency(self, code: str, amount: float):
         exchange_rate = Currency.get_currency(self, code)
-        pln_to_currency = f'{amount} PLN -> {round((amount / exchange_rate), 2)} {code}'
+        pln_to_currency = f'{amount} PLN <-> {round((amount / exchange_rate), 2)} {code}'
         currency_to_pln = f'{amount} {code} = {amount * exchange_rate} PLN'
         return pln_to_currency, currency_to_pln
 
@@ -41,11 +41,10 @@ def main():
     os.system('clear')
     path = dotenv_values()['PATH']
     currency = Currency(path)
-    print(currency.f_curr_to_sec_curr('USD', 'THB', 100))
     print("What do you want to do?")
-    print("1) PLN -> Currency")
-    print("2) Currency -> PLN")
-    print("3) Currency1 -> Currency2")
+    print("1) PLN <-> Currency")
+    print("2) Currency <-> PLN")
+    print("3) Currency1 <-> Currency2")
     print("4) Exit")
     mod = input("Your choice: ")
 
