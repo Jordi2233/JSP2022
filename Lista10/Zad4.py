@@ -12,7 +12,7 @@ class Currency:
     def __init__(self, path: str):
         self.path = path
         self.file = BeautifulSoup(open(path), 'xml')
-        Currency.get_html(self, self.url)
+        self.get_html(self.url)
 
     def get_html(self, url: str):
         if not os.path.isfile(self.path) or self.file.find('data_publikacji').text != (date.today() - timedelta(days=1)).strftime('%Y-%m-%d'):
@@ -26,14 +26,14 @@ class Currency:
         return exchange_rate
 
     def calculate_pln_currency(self, code: str, amount: float):
-        exchange_rate = Currency.get_currency(self, code)
+        exchange_rate = self.get_currency(code)
         pln_to_currency = f'{amount} PLN <-> {round((amount / exchange_rate), 2)} {code}'
         currency_to_pln = f'{amount} {code} = {amount * exchange_rate} PLN'
         return pln_to_currency, currency_to_pln
 
     def f_curr_to_sec_curr(self, code_1: str, code_2: str, amount: float):
-        currency_1 = Currency.get_currency(self, code_1)
-        currency_2 = Currency.get_currency(self, code_2)
+        currency_1 = self.get_currency(code_1)
+        currency_2 = self.get_currency(code_2)
         return f'{amount} {code_1} <-> {round((amount * currency_1 / currency_2), 2)} {code_2}'
 
 
@@ -71,6 +71,7 @@ def main():
                 exit()
     except AttributeError:
         print("Wrong currency code!")
+
 
 if __name__ == '__main__':
     main()
