@@ -5,11 +5,13 @@ from itertools import combinations
 
 class Sublists:
     def __init__(self, lst):
-        self.result = []
         self.lst = lst
-        for i in range(len(lst) + 1):
-            for subset in combinations(lst, i):
-                self.result.append(list(subset))
+        # self.result = []
+        # for i in range(len(lst) + 1):
+        #     for subset in combinations(lst, i):
+        #         self.result.append(list(subset))
+
+        self.result = list(map(lambda x: list(map(int,x)), map(lambda x: [j for i in x for j in i], map(lambda i: list(combinations(lst, i)), range(len(lst) + 1)))))
 
 
 def main():
