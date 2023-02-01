@@ -27,14 +27,14 @@ class Currency:
 
     def calculate_pln_currency(self, code: str, amount: float):
         exchange_rate = self.get_currency(code)
-        pln_to_currency = f'{amount} PLN <-> {round((amount / exchange_rate), 2)} {code}'
+        pln_to_currency = f'{amount} PLN <-> {amount / exchange_rate:.2f} {code}'
         currency_to_pln = f'{amount} {code} = {amount * exchange_rate} PLN'
         return pln_to_currency, currency_to_pln
 
     def f_curr_to_sec_curr(self, code_1: str, code_2: str, amount: float):
         currency_1 = self.get_currency(code_1)
         currency_2 = self.get_currency(code_2)
-        return f'{amount} {code_1} <-> {round((amount * currency_1 / currency_2), 2)} {code_2}'
+        return f'{amount} {code_1} <-> {amount * currency_1 / currency_2:.2f} {code_2}'
 
 
 def main():

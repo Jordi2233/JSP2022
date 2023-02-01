@@ -22,7 +22,7 @@ class ThreeSum:
 
 def main():
     os.system('clear')
-    numbers = [-25, -10, -7, -3, 2, 4, 8, 10]
+    numbers = [-1, -2, 3, 6, -4, 7]
     print(f" {numbers} -> {ThreeSum(numbers).find_triplets()}")
 
 
